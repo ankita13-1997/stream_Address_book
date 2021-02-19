@@ -1,5 +1,6 @@
 package UserRegistration;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collector;
@@ -258,7 +259,17 @@ public class AdressUc5 {
                                 
 	  }
 		 
-		 
+		 void sorting() 
+		 {
+			//System.out.println("enter the value you want to check");
+			  
+		     // String checkout4=sc.next();
+		      List<Book> view4= store.stream().sorted(Comparator.comparing(Book :: getFsname)).collect(Collectors.toList());
+              //System.out.println(view4);
+              view4.forEach(System.out::println);
+              
+			 
+		 }
 		 
 	 
 
@@ -271,6 +282,7 @@ public class AdressUc5 {
 			System.out.println("3.updating the addrss book");
 			System.out.println("4.for data removal");
 			System.out.println("5.for doing survey of address book");
+			System.out.println("6.for shorting the address book according to the name");
 			System.out.println("7.For Exit");
 			System.out.println("choose your option");
 			int userin = sc.nextInt();
@@ -296,7 +308,13 @@ public class AdressUc5 {
 				new AdressUc5().survey();
 				break;
 
+				
+				
 			case 6:
+				new AdressUc5().sorting();
+				break;
+				
+			case 7:
 				end();
 				break;
 
